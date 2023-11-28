@@ -1,0 +1,6 @@
+
+{% if massages %}
+{% for msg in messages %}
+<p class="alert alert={{ msg.tags }}">{{ masg }}</p>
+{% endfor %}
+{% endif %}
