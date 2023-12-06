@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import UserCreationForm , UserChangeForm
+from . models import CustomeUser
 
 
 class UserRegistrationForm(forms.Form):
@@ -22,6 +24,16 @@ class UserLoginForm(forms.Form):
 
 
 
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm):
+        model= CustomeUser
+        fields= UserCreationForm.Meta.fields + ('age',) 
 
+
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta:
+        model= CustomeUser
+        fields= UserChangeForm.Meta.fields
 
 

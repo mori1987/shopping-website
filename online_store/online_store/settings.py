@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'accounts.apps.AccountsConfig',
+    'accounts',
     'contact.apps.ContactConfig',
     'payement.apps.PayementConfig',
     'products.apps.ProductsConfig',
@@ -46,6 +46,9 @@ INSTALLED_APPS = [
 
 
 ]
+
+AUTH_USER_MODEL ='accounts.CustomeUser'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
